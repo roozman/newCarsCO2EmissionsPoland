@@ -79,7 +79,7 @@ The model selection process is documented in [`notebook.ipynb`](notebook.ipynb).
 3. **Run the script**
    ```bash
    python main.py
-The service will start at http://0.0.0.0:8000.
+The service will start at http://127.0.0.1:8000.
 
 ### Running with Docker
 
@@ -89,7 +89,7 @@ The service will start at http://0.0.0.0:8000.
 2. **Run the container**
    ```bash
    docker run -p 8000:8000 co2-emissions
-The service will start at http://0.0.0.0:8000.
+The service will start at http://127.0.0.1:8000.
 
 ## API Usage Example
 
@@ -103,7 +103,7 @@ The API provides a `/predict` endpoint to predict CO2 emissions based on vehicle
    python main.py
 2. **Access API docs**
    ```bash
-   http://0.0.0.0:8000/docs
+   http://127.0.0.1:8000/docs
 3. **Test the predict endpoint** <br>
 You can edit the placeholder values for the model and then press **Execute** to test the model.   
 4. **View the response** <br>
