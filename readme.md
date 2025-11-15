@@ -65,11 +65,59 @@ The model selection process is documented in [`notebook.ipynb`](notebook.ipynb).
 
 - **Final Model**: Both **`LGBMRegressor`** and **`XGBoost`** were evaluated, with very close performance scores. However, **`LGBMRegressor`** was chosen as the final model due to its **faster training time** and **better handling of categorical variables**, which is critical given the dataset size (570,000+ rows). The model was fine-tuned using **`GridSearchCV`** for optimal hyperparameters.
 
+## How to Run the Project
+
+### Running Locally
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/roozman/newCarsCO2EmissionsPoland.git
+   cd newCarsCO2EmissionsPoland
+2. **Setting up the environment**
+   ```bash
+   pip install -r requirements.txt
+3. **Train the model**
+   ```bash
+   python main.py
+The service will start at http://0.0.0.0:8000.
+
+### Running with Docker
+
+1. **Build the docker image**
+   ```bash
+   docker build -t co2-emissions .
+2. **Run the container**
+   ```bash
+   docker run -p 8000:8000 co2-emissions
+The service will start at http://0.0.0.0:8000.
+
+## API Usage Example
+
+The API provides a `/predict` endpoint to predict CO2 emissions based on vehicle specifications. You can easily test and interact with the API using FastAPI's built-in documentation.
+
+### Using FastAPI Docs
+
+1. **Start the Service**
+   Make sure the service is running locally or via Docker:
+   ```bash
+   python main.py
+2. **Access API docs**
+   ```bash
+   http://0.0.0.0:8000/docs
+3. **Test the predict endpoint** <br>
+You can edit the placeholder values for the model and then press **Execute** to test the model.   
+4. **View the response** <br>
+The API will return a JSON response with the predicted CO2 emissions, for example:
+   ```bash
+   {
+   "predictions": 125.5
+   }
 ## Project Structure
 
 ├── README.md <br>
 ├── data/       # Directory for dataset <br>
 │   └── data.csv (Download instruction in readme) <br>
+│   └── Table-definition.xlsx # Feature guide <br>
 ├── notebook.ipynb  # Model selection and evaluation<br>
 ├── train.py # Script to train and save the final model<br>
 ├── predict.py  # Script to load the model and serve predictions via FastAPI<br>
