@@ -76,7 +76,7 @@ The model selection process is documented in [`notebook.ipynb`](notebook.ipynb).
 2. **Setting up the environment**
    ```bash
    pip install -r requirements.txt
-3. **Run the script**
+3. **Train the model**
    ```bash
    python main.py
 The service will start at http://127.0.0.1:8000.
@@ -90,6 +90,11 @@ The service will start at http://127.0.0.1:8000.
    ```bash
    docker run -p 8000:8000 co2-emissions
 The service will start at http://127.0.0.1:8000.
+
+### Accessing the deployed service on Render.com <br>
+The project is also deployed and accessible online via Render. You can interact with the service directly at:
+<a href="https://newcarsco2emissionspoland.onrender.com">CO2 Emissions Prediction Service</a>
+
 
 ## API Usage Example
 
