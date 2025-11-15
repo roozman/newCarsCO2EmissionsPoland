@@ -76,7 +76,7 @@ The model selection process is documented in [`notebook.ipynb`](notebook.ipynb).
 2. **Setting up the environment**
    ```bash
    pip install -r requirements.txt
-3. **Train the model**
+3. **Run the script**
    ```bash
    python main.py
 The service will start at http://0.0.0.0:8000.
